@@ -2,14 +2,15 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const path = require('path');
+const db = require('./models');
 
 // Database
-const db = require('./config/database');
+// const db = require('./config/config.json');
 
 // Test DB
-db.authenticate()
-  .then(() => console.log('Database connected...'))
-  .catch(err => console.log('Error: ' + err))
+// db.authenticate()
+//   .then(() => console.log('Database connected...'))
+//   .catch(err => console.log('Error: ' + err))
 
 const app = express();
 
@@ -29,6 +30,13 @@ app.get('/', (req, res) => res.render('index', { layout: 'landing' }));
 // Gig routes
 app.use('/gigs', require('./routes/gigs'));
 
+// Signup Route
+app.get('/gigs/add/signup', (req, res) => res.render('signup', { layout: 'landing' }));
+
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, console.log(`Server started on port ${PORT}`));
+
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, console.log(`Server started on port ${PORT}`));  
+});
+
