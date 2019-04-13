@@ -1,0 +1,19 @@
+  <section id="foods" class="container">
+    <h1>Items for Sale</h1>
+
+    {{#each gigs}}
+      <div class="food">
+      <h3>{{title}}</h3>
+      <p>{{description}}</p>
+      <ul>
+        <li>Price: {{budget}}</li>
+      </ul>
+      <div class="tech">
+        <small>Location: <span>{{technologies}}</span></small>
+      </div>
+    </div>
+    {{else}}
+      <p>No food</p>
+    {{/each}}
+    
+  </section>
