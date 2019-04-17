@@ -1,24 +1,23 @@
-// const Sequelize = require('sequelize');
-// const db = require('../config/config.json');
+
 module.exports = function(sequelize, DataTypes) {
-const Gig = sequelize.define('gig', {
-  title: {
+const Food = sequelize.define('food', {
+  item: {
     type:DataTypes.STRING
   },
-  technologies: {
+  location: {
     type:DataTypes.STRING
   },
   description: {
     type:DataTypes.STRING
   },
-  budget: {
+  price: {
     type:DataTypes.STRING
   },
   contact_email: {
     type:DataTypes.STRING
   }
 });
-  return Gig;
+  return Food;
 
 }
 

@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./models');
 
+
 // Database
 // const db = require('./config/config.json');
 
@@ -24,14 +25,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+var routes = require("./routes/foods.js");
+
+app.use(routes);
+
 // Index route
 app.get('/', (req, res) => res.render('index', { layout: 'landing' }));
 
-// Gig routes
-app.use('/gigs', require('./routes/gigs'));
+// Food routes
+app.use('/foods', (req, res) => res.render('foods', { layout: 'landing' }));
+
+app.get('/add', (req, res) => res.render('add', { layout: 'landing' }));
+
+
 
 // Signup Route
-app.get('/gigs/add/signup', (req, res) => res.render('signup', { layout: 'landing' }));
+app.get('/signup', (req, res) => res.render('signup', { layout: 'landing' }));
 
 const PORT = process.env.PORT || 3000;
 

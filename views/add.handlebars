@@ -1,25 +1,20 @@
   <section id="add" class="container">
     <div class="form-wrap">
       <h1>Add an Item</h1>
-      {{#each errors}}
-        <div class="error">
-          <p>{{text}}</p>
-        </div>
-      {{/each}}
-      <form action="/gigs/add" method="POST">
+      <form action="/foods" method="POST">
         <div class="input-group">
           <label for="">Item</label>
-          <input type="text" name="title" id="title" class="input-box" placeholder="What are you selling?"
-            maxlength="100" value={{title}}>
+          <input type="text" name="item" id="item" class="input-box" placeholder="What are you selling?"
+            maxlength="100" value={{item}}>
         </div>
         <div class="input-group">
-          <label for="technologies">Location</label>
-          <input type="text" name="technologies" id="technologies" class="input-box" placeholder="Where are you?"
-          maxlength="100" value={{technologies}}>
+          <label for="location">Location</label>
+          <input type="text" name="location" id="location" class="input-box" placeholder="Where are you?"
+          maxlength="100" value={{location}}>
         </div>
         <div class="input-group">
-          <label for="budget">Price</label>
-          <input type="number" name="budget" id="budget" class="input-box" placeholder="$$$" value={{budget}}>
+          <label for="price">Price</label>
+          <input type="number" name="price" id="price" class="input-box" placeholder="$$$" value={{price}}>
         </div>
         <div class="input-group">
           <label for="description">Description</label>
@@ -27,7 +22,7 @@
             rows="10">{{description}}</textarea>
         </div>
         <div class="input-group">
-          <label for="budget">Contact Email</label>
+          <label for="price">Contact Email</label>
           <input type="email" name="contact_email" id="contactemail" class="input-box" placeholder="Enter an email" value={{contact_email}}>
         </div>
         <input type="submit" value="Add Item" class="btn btn-reverse">
