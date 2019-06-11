@@ -54,7 +54,6 @@ a:hover {
   margin-bottom: 15px;
 }
 
-/* Header */
 header {
   display: flex;
   position: absolute;
@@ -106,7 +105,6 @@ header.inner {
 	
 
 
-/* Buttons */
 .btn {
   color: #fff;
   padding: 0.6rem;
@@ -130,7 +128,6 @@ header.inner {
   color: #ff4444;
 }
 
-/* Home Search */
 .search-wrap {
   background: url('../img/market.jpg') no-repeat center center fixed / cover;
   height: 100vh;
@@ -179,7 +176,6 @@ header.inner {
   color: #333;
 }
 
-/* Everything in the search form */
 .search-form > * {
   border: 0;
   padding: 0 0 0 10px;
@@ -194,7 +190,6 @@ input[type='search'] {
   flex-basis: 600px;
 }
 
-/* Food */
 .food {
   background: url('../img/blackboard.jpg');
   color: #fff;
@@ -222,7 +217,6 @@ input[type='search'] {
   color: #fff;
 }
 
-/* Form */
 .form-wrap {
   margin: auto;
   background: url('../img/blackboard.jpg');
@@ -266,7 +260,6 @@ label {
   border-radius: 0.25rem;
 }
 
-/* Tablets */
 @media (max-width: 800px) {
   .container {
     padding: 1rem 2rem;
@@ -309,7 +302,6 @@ label {
   }
 }
 
-/* Smartphones */
 @media (max-width: 500px) {
   .container {
     padding: 0rem;
